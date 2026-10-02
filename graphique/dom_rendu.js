@@ -1,6 +1,6 @@
 // graphique/dom_rendu.js
 
-function inserer_carre_dom(conteneur, coordonnees, nombre) {
+function inserer_carre_dom(coordonnees, nombre) {
     const element_carre = document.createElement('div')
     element_carre.id = 'carre_' + nombre
     element_carre.className = est_premier(nombre) ? 'carre_premier' : 'carre_normal'
