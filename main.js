@@ -1,5 +1,8 @@
-// Variable globale simple pour stocker l'état de la grille (clé: "x,y", valeur: nombre)
-grille_memoire = {}
+// Deux objets globaux simples
+grille_memoire = {}       // clé: "x,y" -> valeur: nombre
+positions_par_nombre = {} // clé: nombre -> valeur: [x, y]
+
+initier_un_tableau_des_premiers_nombres_premiers(100)
 
 function initialiser_application() {
     initialisation_du_graphique()
@@ -25,3 +28,11 @@ else{
 }
 
 console.log(grille_memoire)
+
+console.log(nombre_premier_de_rang_[0])
+console.log(nombre_premier_de_rang_[1])
+console.log(nombre_premier_de_rang_[2])
+
+console.log(positions_par_nombre[2])
+
+

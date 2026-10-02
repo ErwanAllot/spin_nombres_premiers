@@ -9,8 +9,9 @@ function initialisation_du_graphique(){
 function inserer_carre_dom(coordonnees, nombre) {
 
     grille_memoire[coordonnees[0] + ',' + coordonnees[1]] = nombre
+    positions_par_nombre[nombre] = coordonnees
 
-    
+
     element_carre = document.createElement('div')
     element_carre.id = 'carre_' + nombre
     element_carre.className = est_premier(nombre) ? 'carre_premier' : 'carre_normal'
