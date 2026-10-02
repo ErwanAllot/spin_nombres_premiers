@@ -1,7 +1,7 @@
-function dessiner_carre(contexte, decalage_x, decalage_y, taille_carre, coordonnees_x, coordonnees_y, nombre) {
+function dessiner_carre(coordonnees_x, coordonnees_y, nombre) {
     // Inversion de l'axe y pour que les y positifs soient vers le haut
-    const pixel_x = decalage_x + (coordonnees_x * taille_carre)
-    const pixel_y = decalage_y - (coordonnees_y * taille_carre)
+    pixel_x = decalage_x + (coordonnees_x * taille_carre)
+    pixel_y = decalage_y - (coordonnees_y * taille_carre)
 
     if (est_premier(nombre)) {
         contexte.fillStyle = '#e74c3c' // Rouge pour les nombres premiers
