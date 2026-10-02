@@ -18,6 +18,12 @@ function inserer_carre_dom(conteneur, coordonnees, nombre) {
     element_carre.style.width = taille_pixel + 'px'
     element_carre.style.height = taille_pixel + 'px'
 
+    if (est_premier(nombre)) {
+        element_carre.style.color = '#e74c3c' // Rouge pour les nombres premiers
+    } else {
+        element_carre.style.color = '#3498db' // Bleu pour les autres entiers
+    }
+
     conteneur.appendChild(element_carre)
 }
 

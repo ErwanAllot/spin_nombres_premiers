@@ -1,29 +1,21 @@
-// graphique/dom_rendu.js
+function dessiner_carre(coordonnees_x, coordonnees_y, nombre) {
+    // Inversion de l'axe y pour que les y positifs soient vers le haut
+    pixel_x = decalage_x + (coordonnees_x * taille_carre)
+    pixel_y = decalage_y - (coordonnees_y * taille_carre)
 
-function inserer_carre_dom(conteneur, coordonnees, nombre) {
-    const element_carre = document.createElement('div')
-    element_carre.id = 'carre_' + nombre
-    element_carre.className = est_premier(nombre) ? 'carre_premier' : 'carre_normal'
-    element_carre.textContent = nombre
-
-    // Positionnement CSS dynamique en fonction des coordonnées (x, y)
-    // On centre par rapport au conteneur
-    const taille_pixel = 50
-    const decalage_x = 400 // Centre approximatif du conteneur
-    const decalage_y = 400
-
-    element_carre.style.position = 'absolute'
-    element_carre.style.left = (decalage_x + (coordonnees[0] * taille_pixel)) + 'px'
-    element_carre.style.bottom = (decalage_y + (coordonnees[1] * taille_pixel)) + 'px'
-    element_carre.style.width = taille_pixel + 'px'
-    element_carre.style.height = taille_pixel + 'px'
-
-    conteneur.appendChild(element_carre)
-}
-
-function supprimer_carre_dom(conteneur, nombre) {
-    const element_a_supprimer = document.getElementById('carre_' + nombre)
-    if (element_a_supprimer) {
-        conteneur.removeChild(element_a_supprimer)
+    if (est_premier(nombre)) {
+        contexte.fillStyle = '#e74c3c' // Rouge pour les nombres premiers
+    } else {
+        contexte.fillStyle = '#3498db' // Bleu pour les autres entiers
     }
+
+    contexte.fillRect(pixel_x, pixel_y, taille_carre, taille_carre)
+    contexte.strokeStyle = '#2c3e50'
+    contexte.strokeRect(pixel_x, pixel_y, taille_carre, taille_carre)
+
+    contexte.fillStyle = '#ffffff'
+    contexte.font = '14px sans-serif'
+    contexte.textAlign = 'center'
+    contexte.textBaseline = 'middle'
+    contexte.fillText(nombre, pixel_x + (taille_carre / 2), pixel_y + (taille_carre / 2))
 }
