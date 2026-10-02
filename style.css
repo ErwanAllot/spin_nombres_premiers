@@ -24,3 +24,19 @@ canvas {
     border: 1px solid #333333;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
 }
+
+.carre_premier{
+    background-color: red;
+}
+.carre_normal{
+    background-color: blue;
+}
+
+.carre_premier, .carre_normal {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-family: sans-serif;
+    font-weight: bold;
+}
